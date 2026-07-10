@@ -8,6 +8,7 @@ import (
 	"gateway/internal/model"
 	"gateway/internal/proxy"
 	"gateway/internal/storage"
+	"log"
 	"net/http"
 	"time"
 
@@ -42,6 +43,8 @@ func (ah *AdminHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			ah.handleCreateTeam(w, r)
 		} else if r.Method == http.MethodGet {
 			ah.handleListTeams(w, r)
+		} else if r.Method == http.MethodDelete {
+			ah.handleDeleteTeam(w, r)
 		} else {
 			http.Error(w, `{"error": "Method Not Allowed"}`, http.StatusMethodNotAllowed)
 		}
@@ -122,6 +125,7 @@ func (ah *AdminHandler) handleDeleteTeam(w http.ResponseWriter, r *http.Request)
 	}
 
 	if err := ah.storage.DeleteTeam(r.Context(), id); err != nil {
+		log.Printf("ERROR deleting team with ID %s: %v", id, err)
 		http.Error(w, `{"error": "Failed to delete team from database"}`, http.StatusInternalServerError)
 		return
 	}

@@ -1,0 +1,42 @@
+charts/aurallm/templates/NOTES.txt
+  h_d9442f917ff202 1-28
+.github/workflows/backend-ci.yml
+  h_d9442f917ff202 1-42
+charts/aurallm/templates/service.yaml
+  h_d9442f917ff202 1-15
+charts/aurallm/templates/secret.yaml
+  h_d9442f917ff202 1-14
+charts/aurallm/Chart.yaml
+  h_d9442f917ff202 1-17
+backend/Dockerfile
+  h_d9442f917ff202 1-21
+charts/aurallm/templates/hpa.yaml
+  h_d9442f917ff202 1-28
+charts/aurallm/templates/deployment.yaml
+  h_d9442f917ff202 1-64
+charts/aurallm/templates/serviceaccount.yaml
+  h_d9442f917ff202 1-12
+charts/aurallm/templates/configmap.yaml
+  h_d9442f917ff202 1-9
+charts/aurallm/templates/_helpers.tpl
+  h_d9442f917ff202 1-84
+.github/workflows/release.yml
+  h_d9442f917ff202 1-39
+charts/aurallm/templates/ingress.yaml
+  h_d9442f917ff202 1-35
+charts/aurallm/values.yaml
+  h_d9442f917ff202 1-106
+.github/workflows/frontend-ci.yml
+  h_d9442f917ff202 1-23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "89f03e465cecd200b9921fc074b0c0bddd1f5f1e",
+  "prompts": {},
+  "humans": {
+    "h_d9442f917ff202": {
+      "author": "daniospace <daniospace@users.noreply.github.com>"
+    }
+  }
+}

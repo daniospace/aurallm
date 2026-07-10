@@ -1,24 +1,82 @@
 ---
-title: Welcome to AuraLLM
-description: "AuraLLM: The Cloud-Native, FinOps-Enforced AI Gateway"
+title: AuraLLM Enterprise Gateway
+sidebarTitle: Product Overview
+description: "The Developer-Friendly AI Gateway That Finance & Security Actually Approve."
 ---
+
+import { Card, CardGroup, Tabs, Tab } from "mintlify";
 
 AuraLLM is a highly performant, commercial-grade AI Gateway written in Go. It serves as a secure, lightweight bridge connecting your developers' standard OpenAI codebases to any downstream LLM provider (OpenAI, Anthropic, Gemini, DeepSeek, LLaMA, etc.) while enforcing **real-time budget limits, local PII sanitization, and automated model migration audits** on-the-fly.
 
 ```python Python (From standard OpenAI Client to AuraLLM in 2 lines!)
 import openai
 
+# Simply swap URL and use your AuraLLM Gateway Key to get strict budget caps & PII scrubbing!
 client = openai.OpenAI(
     api_key="gw-team-key-your-secret-here", 
-    base_url="https://gateway.yourcompany.com/v1" # Simply swap URL to get strict budget caps!
+    base_url="https://gateway.yourcompany.com/v1" 
 )
 ```
 
 ---
 
-## 🏗️ System Architecture
+## 🎯 Enforcing AI Governance by Stakeholder
 
-AuraLLM sits seamlessly as a proxy between your internal developers and public cloud LLM servers. Because Mintlify natively supports **Mermaid.js**, you can view our live-rendering network architecture below:
+Enterprise AI adoption requires consensus. AuraLLM satisfies all three core organizational pillars natively within the gateway proxy layer, eliminating the need for expensive multi-vendor security integrations:
+
+<Tabs>
+  <Tab title="CFO (FinOps & Budgets)">
+    ### Enforce Spend Boundaries with Microsecond Precision
+    
+    AuraLLM gives financial leaders complete predictability over generative AI budgets:
+    *   **Distributed Budget Caps:** Budgets are synchronized globally across your clusters using a distributed **Redis Cache** with atomic float increments.
+    *   **Proactive Webhook Alerts:** Receive instant notifications via **Slack / PagerDuty** the second a team consumes 80% or 100% of their allocated budget.
+    *   **Anti-Spam Threshold Locks:** Restricts budget warnings to exactly once per threshold per team per month, preserving your Slack channels.
+  </Tab>
+  <Tab title="CISO (Data Security & Compliance)">
+    ### Local PII Sanitization & SOC2/HIPAA Readiness
+    
+    Stop employees and apps from leaking customer data or company secrets to public LLM servers:
+    *   **Local Compiled Regex Scrubber:** Automatically detects and scrubs Social Security Numbers (SSNs), Credit Cards, emails, and proprietary API Keys locally on your private servers.
+    *   **Auto Re-injection (Un-redaction):** Original sensitive values are securely held in local gateway memory and re-injected back into standard model replies on-the-fly.
+    *   **Frictionless Compliance:** Satisfy SOC2, HIPAA, and GDPR audit trails without developers writing a single line of custom security code.
+  </Tab>
+  <Tab title="CTO (DevOps & Engineering)">
+    ### Raw Go Concurrency, High Availability, and No Vendor Lock-In
+    
+    Give your developers complete model freedom without sacrificing infrastructure speed:
+    *   **Shadow Routing (Migration Auditor):** Duplicate live production prompts in background goroutines to test cheaper models side-by-side with zero reliability risk or added latency.
+    *   **Zero-Dependency Binary:** AuraLLM compiles down to a single ~20MB executable running on only **~15MB of RAM** with startup latency under **10ms**.
+    *   **OIDC/Okta SSO Integration:** Gated under a secure admin portal with Role-Based Access Controls to enforce separation of duties.
+  </Tab>
+</Tabs>
+
+---
+
+## ⚡ Core Commercial Features
+
+Explore our suite of high-fidelity enterprise-ready features:
+
+<CardGroup cols={2}>
+  <Card title="Distributed Budget Caps" icon="chart-simple" href="/features/budgets">
+    Sync team budgets globally across multi-node Kubernetes clusters with sub-millisecond atomic Redis increments.
+  </Card>
+  <Card title="PII Redaction Guard" icon="shield-halved" href="/features/pii-redaction">
+    Scrub Credit Cards, SSNs, and Secrets locally on your private servers before prompts ever touch public cloud providers.
+  </Card>
+  <Card title="Migration Auditor" icon="shuffle" href="/features/shadow-routing">
+    Run parallel background shadow routing to compare cost, latency, and tokens side-by-side with 100% data-driven confidence.
+  </Card>
+  <Card title="Enterprise SSO & RBAC" icon="key" href="/features/sso">
+    Integrate Okta OIDC/SAML authentication and restrict access dynamically between FinOps, Developers, and Compliance roles.
+  </Card>
+</CardGroup>
+
+---
+
+## 🏗️ Enterprise deployment
+
+AuraLLM sits seamlessly as a proxy between your internal developers and public cloud LLM servers, executing completely within your secure private network:
 
 ```mermaid
 graph TD
@@ -50,41 +108,3 @@ graph TD
     style D fill:#064e3b,stroke:#10b981,stroke-width:1px,color:#ffffff
     style J fill:#0f172a,stroke:#334155,stroke-width:1px,color:#ffffff
 ```
-
----
-
-## ⚡ Feature Comparison Matrix
-
-When pitching to stakeholders, AuraLLM stands out by packing enterprise privacy and migration guardrails directly into the gateway proxy layer, bypassing the need for separate security vendor integrations:
-
-| Capability | LiteLLM (Python) | Portkey (Node) | AuraLLM (Go) |
-| :--- | :---: | :---: | :---: |
-| **Runtime Overhead** | High (Python GIL) | Medium (Node) | **Ultra-Low (<1ms added)** |
-| **Idle Memory Footprint** | ~200MB - 300MB | ~120MB | **~15MB** |
-| **Binary Size / Dependencies** | Giant Python runtime / Venv | Complex Node dependencies | **None (Single 20MB Go Binary)** |
-| **Distributed Budget Sync** | Complex manual setup | Cloud SaaS only | **Built-in Atomic Redis Sync** |
-| **Local PII & Secret Redaction** | ❌ None (No-op) | ❌ None (No-op) | **✓ Built-in Local Scrubber** |
-| **Non-Blocking Shadow Auditing** | ❌ None (No-op) | ❌ None (No-op) | **✓ Built-in Migration Auditor** |
-| **Single-Sign-On (SSO) Portal** | ❌ Enterprise paid only | Cloud SaaS only | **✓ Built-in Okta OIDC Gate** |
-| **Budgets Webhook Alerts** | ❌ Paid only | Cloud SaaS only | **✓ Built-in Slack Webhooks** |
-
----
-
-## ⚡ Why Mid-Sized Teams Choose AuraLLM
-
-Mid-sized engineering organizations (100 to 1,000 employees) adopt AuraLLM to satisfy budget predictability and private data compliance without the overhead of heavy enterprise security middleware:
-
-*   **Distributed Budget caps:** Atomic budget deduction synchronized globally across your clusters using a distributed **Redis Cache**.
-*   **Shadow Routing (Migration Auditor):** Duplicate live production prompts in background goroutines to test cheaper models side-by-side with zero reliability risk.
-*   **Local PII Redaction Guard:** Automatically scrub credit cards, SSNs, and secrets on your local servers before prompts ever leave your private network.
-*   **OIDC/Okta SSO Integration:** Satisfy procurement security audits out-of-the-box with Single Sign-On and dynamic Role-Based Access Controls.
-
----
-
-## 🛠️ Performance & Overhead
-
-Because AuraLLM is built in Go, it features near-zero overhead under high-concurrency mid-market workloads:
-
-*   **RAM Footprint:** ~15MB at idle.
-*   **Startup Latency:** less than 10ms.
-*   **Edge deployment:** Runs as a lightweight, zero-dependency 20MB Docker container or Kubernetes sidecar.

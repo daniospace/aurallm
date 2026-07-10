@@ -1,0 +1,24 @@
+docs/features/pii-redaction.mdx
+  s_fa997fbd4b149e::t_a017122707a255 10-36
+docs/features/shadow-routing.mdx
+  s_fa997fbd4b149e::t_2cb472a5fd4d07 10-38
+docs/introduction.mdx
+  s_fa997fbd4b149e::t_f9e053e3051ae5 6,17-71
+  s_fa997fbd4b149e::t_b189933ebdfa00 72
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "9a862b94f1443e7086a9969507e10d6a7b8ba02e",
+  "prompts": {},
+  "sessions": {
+    "s_fa997fbd4b149e": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "be536f39-95e0-4ae1-aabe-17ba84cb11b2",
+        "model": "gemini-3.5-flash"
+      },
+      "human_author": "daniospace <daniospace@users.noreply.github.com>"
+    }
+  }
+}

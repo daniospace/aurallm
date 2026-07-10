@@ -1,0 +1,41 @@
+frontend/app/components/AuthLayout.tsx
+  s_fa997fbd4b149e::t_b720947ff83394 1-196
+compose.yaml
+  s_fa997fbd4b149e::t_8a74e469db9fac 15-21
+backend/internal/cache/redis.go
+  s_fa997fbd4b149e::t_84fdc4fc85a93a 1-117
+frontend/app/layout.tsx
+  s_fa997fbd4b149e::t_f930e6b5920e11 5-6,31-36
+backend/main.go
+  s_fa997fbd4b149e::t_0279f10728c73a 88-100,102-103
+backend/internal/proxy/server.go
+  s_fa997fbd4b149e::t_0b04cfc932f8b1 9
+  s_fa997fbd4b149e::t_4ea73ffab66c70 457-488
+  s_fa997fbd4b149e::t_3314c2a3c8634a 271,273
+  s_fa997fbd4b149e::t_f1317b24efd5dc 356,358
+backend/internal/alert/alert.go
+  s_fa997fbd4b149e::t_7aeb960b5c278a 12,14-18
+  s_fa997fbd4b149e::t_f38dfab59bfffb 1-11,13,19-91
+frontend/app/context/AuthContext.tsx
+  s_fa997fbd4b149e::t_dd26f5f4225311 1-86
+backend/go.mod
+  s_fa997fbd4b149e::t_7cbd361c110ae6 9-14
+backend/go.sum
+  s_fa997fbd4b149e::t_d0592727195584 1-2,7-10
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "6fd5573908c27d61e796a8032761bb04806df64b",
+  "prompts": {},
+  "sessions": {
+    "s_fa997fbd4b149e": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "be536f39-95e0-4ae1-aabe-17ba84cb11b2",
+        "model": "gemini-3.5-flash"
+      },
+      "human_author": "daniyarndh <117352341+daniyarndh@users.noreply.github.com>"
+    }
+  }
+}

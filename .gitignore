@@ -1,0 +1,9 @@
+# Ignore local environment configurations
+.env
+
+# Go binaries
+backend/gateway
+gateway
+
+# Operating system files
+.DS_Store

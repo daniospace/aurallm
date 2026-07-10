@@ -1,0 +1,31 @@
+docs/introduction.mdx
+  s_fa997fbd4b149e::t_169ceaca215199 1-34
+docs/mint.json
+  s_fa997fbd4b149e::t_e291c7f36471a2 1-40
+docs/quickstart.mdx
+  s_fa997fbd4b149e::t_4992bcfc04b81f 1-66
+docs/features/shadow-routing.mdx
+  s_fa997fbd4b149e::t_131d80a7983cb7 1-34
+docs/features/budgets.mdx
+  s_fa997fbd4b149e::t_4e669bd6a85e0b 1-30
+docs/features/pii-redaction.mdx
+  s_fa997fbd4b149e::t_01e3048750e6b9 1-31
+docs/features/sso.mdx
+  s_fa997fbd4b149e::t_169e35a9d0f199 1-33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "955322da3a5b2147291a7c075e3739db1776f7df",
+  "prompts": {},
+  "sessions": {
+    "s_fa997fbd4b149e": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "be536f39-95e0-4ae1-aabe-17ba84cb11b2",
+        "model": "gemini-3.5-flash"
+      },
+      "human_author": "daniyarndh <117352341+daniyarndh@users.noreply.github.com>"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+docs/features/pii-redaction.mdx
+  s_fa997fbd4b149e::t_4cb6e9dad2ca44 45
+README.md
+  s_fa997fbd4b149e::t_c252cf704cbc33 109
+backend/internal/proxy/scrubber_test.go
+  s_fa997fbd4b149e::t_21c3f16aa084d8 20
+backend/internal/alert/alert.go
+  s_fa997fbd4b149e::t_edb824743cc257 39,45
+.gitignore
+  h_d9442f917ff202 18
+docs/mint.json
+  s_fa997fbd4b149e::t_a6310d497cd181 34
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "8b97b624e33e551cfd600859a86ccd2ef7e366b2",
+  "prompts": {},
+  "humans": {
+    "h_d9442f917ff202": {
+      "author": "daniospace <daniospace@users.noreply.github.com>"
+    }
+  },
+  "sessions": {
+    "s_fa997fbd4b149e": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "be536f39-95e0-4ae1-aabe-17ba84cb11b2",
+        "model": "gemini-3.5-flash"
+      },
+      "human_author": "daniospace <daniospace@users.noreply.github.com>"
+    }
+  }
+}

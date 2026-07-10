@@ -38,10 +38,23 @@ export default function MigrationAuditorPage() {
     const apiBase = getAPIBase();
     fetch(`${apiBase}/api/teams`, { cache: "no-store" })
       .then((res) => {
-        if (!res.ok) throw new Error("Failed to fetch teams");
+        if (!res.ok) {
+          console.warn("Could not connect to API server. Falling back to sandbox.");
+          const fallbackTeams = [
+            { id: "1", name: "Engineering Core" },
+            { id: "2", name: "Data Science Research" },
+          ];
+          setTeams(fallbackTeams);
+          setSelectedTeam("1");
+          setRuns(getMockRuns());
+          setIsDemoData(true);
+          setLoading(false);
+          return null;
+        }
         return res.json();
       })
       .then((data) => {
+        if (!data) return;
         const teamData = data || [];
         setTeams(teamData);
         if (teamData.length > 0) {
@@ -74,10 +87,21 @@ export default function MigrationAuditorPage() {
     const apiBase = getAPIBase();
     fetch(`${apiBase}/api/usage?team_id=${teamID}`, { cache: "no-store" })
       .then((res) => {
-        if (!res.ok) throw new Error("Failed to fetch usage logs");
+        if (!res.ok) {
+          console.warn("Could not fetch usage logs. Loading simulated runs.");
+          setRuns(getMockRuns().map(run => ({
+            primary: { ...run.primary, team_id: teamID },
+            shadow: { ...run.shadow, team_id: teamID },
+          })));
+          setIsDemoData(true);
+          setRunsLoading(false);
+          setLoading(false);
+          return null;
+        }
         return res.json();
       })
       .then((data) => {
+        if (!data) return;
         if (Array.isArray(data) && data.length > 0) {
           const primaryLogs = data.filter((l: UsageLog) => !l.is_shadow);
           const shadowLogs = data.filter((l: UsageLog) => l.is_shadow);

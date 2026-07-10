@@ -150,7 +150,7 @@ func main() {
 
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "8080"
+		port = "8085"
 	}
 
 	log.Printf("Bifrost AI Gateway starting on port %s...", port)

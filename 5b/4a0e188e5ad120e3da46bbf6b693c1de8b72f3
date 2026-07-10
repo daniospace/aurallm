@@ -1,0 +1,53 @@
+README.md
+  s_fa997fbd4b149e::t_b512edadf59dcb 1,3,7,9-11,19-20,24-25,43,50,65,78,106
+frontend/app/components/Header.tsx
+  s_fa997fbd4b149e::t_c2bf8727da2585 23,29,31,33-34
+docs/features/pii-redaction.mdx
+  s_fa997fbd4b149e::t_a55d7f7dc17bf3 8,12,22,29
+docs/introduction.mdx
+  s_fa997fbd4b149e::t_eaf773f13350d3 33
+  s_fa997fbd4b149e::t_819b10e36fbb6c 2-3,6,8,13,17,19,30
+frontend/app/context/AuthContext.tsx
+  s_fa997fbd4b149e::t_5bb0559c5f1e02 27,57,63,70
+backend/main.go
+  s_fa997fbd4b149e::t_df7638a9ea8efc 156
+frontend/app/layout.tsx
+  s_fa997fbd4b149e::t_0f7eaf65b5facd 19-20
+frontend/app/migration/page.tsx
+  s_fa997fbd4b149e::t_6d359297a854a9 257
+docs/features/shadow-routing.mdx
+  s_fa997fbd4b149e::t_5bd813d195b733 8,12,21,32,34
+backend/out/index.html
+  s_fa997fbd4b149e::t_bb7c2b4d48b58c 1
+frontend/app/globals.css
+  s_fa997fbd4b149e::t_bdbfe31d12bb89 2-3,5-9,20-29
+docs/mint.json
+  s_fa997fbd4b149e::t_447ba861cf2219 4
+  s_fa997fbd4b149e::t_627abf6c9ed65a 3,6-8
+docs/features/sso.mdx
+  s_fa997fbd4b149e::t_ca449c9f6949ec 8,12
+  s_fa997fbd4b149e::t_be1e3fec5dc930 21
+docs/features/budgets.mdx
+  s_fa997fbd4b149e::t_15ddd124de9ced 6,10,19,26
+  s_fa997fbd4b149e::t_620f653dad1db1 13
+docs/quickstart.mdx
+  s_fa997fbd4b149e::t_6e7ec2bd78d350 3,6
+frontend/app/components/AuthLayout.tsx
+  s_fa997fbd4b149e::t_d967a4c5ca23c5 46,59,62,65,71,73,76,78,89,96-97,108,110
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "5b4a0e188e5ad120e3da46bbf6b693c1de8b72f3",
+  "prompts": {},
+  "sessions": {
+    "s_fa997fbd4b149e": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "be536f39-95e0-4ae1-aabe-17ba84cb11b2",
+        "model": "gemini-3.5-flash"
+      },
+      "human_author": "daniospace <daniospace@users.noreply.github.com>"
+    }
+  }
+}

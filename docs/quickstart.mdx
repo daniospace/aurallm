@@ -1,0 +1,66 @@
+---
+title: Quickstart
+description: "Launch your Bifrost Gateway in under 5 minutes"
+---
+
+This guide gets you started running Bifrost locally using Docker Compose, Postgres, and Redis distributed caching.
+
+## 1. Setup Local Environment
+
+Spin up the preloaded PostgreSQL database (Port `5435`) and high-performance Redis cache (Port `6379`) containers:
+
+```bash
+docker-compose up -d
+```
+
+### Configure Environment variables
+An `.env` file is generated in your project root folder:
+
+```env
+DATABASE_URL=postgres://postgres:postgres@localhost:5435/gateway?sslmode=disable
+REDIS_URL=redis://localhost:6379/0
+PORT=8085
+```
+
+---
+
+## 2. Start the Gateway
+
+### For Development (Separately)
+
+During active development, launch the Go backend and Next.js frontend separately to utilize fast hot-reloading:
+
+```bash Terminal 1 (Go API Proxy)
+cd backend
+go run main.go
+```
+
+```bash Terminal 2 (Next.js Dashboard)
+cd frontend
+npm run dev
+```
+
+Open **`http://localhost:3000`** in your browser to access the secure SSO portal.
+
+---
+
+### For Production (Single Unified Binary)
+
+To compile the entire portal into a zero-dependency static executable serving both the dashboard and API on port `8085`:
+
+```bash
+# 1. Compile Next.js dashboard
+cd frontend && npm run build
+
+# 2. Package static assets into Go build folder
+cd .. && rm -rf backend/out && cp -r frontend/out backend/out
+
+# 3. Build Go production binary
+cd backend
+go build -o gateway main.go
+
+# 4. Start your secure server
+./gateway
+```
+
+Open **`http://localhost:8085`** in your browser to access the live single-binary administrative portal!

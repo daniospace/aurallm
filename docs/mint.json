@@ -1,0 +1,40 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Bifrost Gateway",
+  "logo": {
+    "light": "/logo/logo.png",
+    "dark": "/logo/logo.png"
+  },
+  "favicon": "/favicon.png",
+  "colors": {
+    "primary": "#4f46e5",
+    "light": "#6366f1",
+    "dark": "#0f172a"
+  },
+  "navigation": [
+    {
+      "group": "Get Started",
+      "pages": [
+        "introduction",
+        "quickstart"
+      ]
+    },
+    {
+      "group": "Core Features",
+      "pages": [
+        "features/budgets",
+        "features/shadow-routing",
+        "features/pii-redaction"
+      ]
+    },
+    {
+      "group": "Enterprise Operations",
+      "pages": [
+        "features/sso"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "github": "https://github.com/daniyarndh/bifrost-gateway"
+  }
+}

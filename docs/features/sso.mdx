@@ -1,0 +1,33 @@
+---
+title: Enterprise SSO & RBAC
+description: "Okta and Azure AD integration for administrative compliance"
+---
+
+Security procurement reviews are often the primary bottleneck when mid-market companies acquire new tools. Security officers strictly forbid shared static passwords for administrative portals.
+
+Bifrost satisfies identity compliance audits natively out-of-the-box.
+
+## Single Sign-On (SSO) Portal
+
+Bifrost gates the administrative console behind a secure Single Sign-On (SSO) Portal, integrating seamlessly with your enterprise identity providers:
+
+*   **OAuth2 / OpenID Connect (OIDC):** Connect directly with Okta, Azure AD, Ping Identity, or Google Workspace.
+*   **Dynamic Domain Restriction:** Enforce login restrictions strictly to your corporate email domain (e.g. `*@yourcompany.com`).
+
+---
+
+## Role-Based Access Control (RBAC)
+
+Bifrost dynamically adjusts the administrative dashboard capabilities based on the logged-in user's role, satisfying segregation of duties (SoD) audits:
+
+### 1. FinOps Administrator (`admin`)
+*   **Permissions:** Full read/write access.
+*   **Capabilities:** Create and delete teams, allocate spending caps, update downstream provider credentials (API Keys), and revoke gateway access keys.
+
+### 2. Developer Team Lead (`developer`)
+*   **Permissions:** Restricted write access.
+*   **Capabilities:** Read-only access to department budgets and charts, but can generate, copy, and manage gateway access keys for *their* active team.
+
+### 3. Compliance Auditor (`compliance`)
+*   **Permissions:** Strict read-only access.
+*   **Capabilities:** View-only access to real-time Audit Logs, PII leak interception counts, and the side-by-side Migration Auditor charts. Cannot create, delete, or modify any database records.

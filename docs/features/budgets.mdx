@@ -1,0 +1,30 @@
+---
+title: Distributed FinOps Budgets
+description: "Atomic, multi-node budget limits for corporate departments"
+---
+
+Mid-sized organizations need strict cost predictability across their engineering teams. Bifrost prevents runaway loop spending and unexpected token overruns through distributed budget enforcement.
+
+## Real-Time Redis Sync
+
+When multiple instances of the Bifrost Gateway run in parallel behind a load balancer, they synchronize authorization keys and budgets atomically using a shared **Redis Distributed Cache**.
+
+*   **Atomic float increments:** Every completed LLM token usage increments and verifies budget limits in Redis in under a millisecond.
+*   **Zero-latency checks:** Key authorization and budget lookups are performed directly on the cache, introducing <1ms of latency on hot API paths.
+
+---
+
+## Slack & PagerDuty Alerting
+
+Bifrost includes a background Webhook Dispatcher. When a team approaches their spending limit, Bifrost automatically notifies administrators before blocking traffic.
+
+```env Env Config (.env)
+SLACK_WEBHOOK_URL="https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX"
+```
+
+### Proactive Threshold Locks
+To prevent spamming your Slack channel on every subsequent request, Bifrost tracks alerts in a thread-safe local registry and dispatches exactly **one warning per threshold (80% and 100%) per team per month**.
+
+```text Console Log (Local Fallback)
+[ALERT NOTICE] Team "Engineering Core" has consumed 84% of budget! Spend: $4,200.00 / Limit: $5,000.00
+```

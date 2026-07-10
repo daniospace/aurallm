@@ -1,0 +1,19 @@
+docs/introduction.mdx
+  s_fa997fbd4b149e::t_dddf9d0366d2ef 2-4,7-8,14,17,23-75,77-79
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "e8842f98b4d177826646da586f54900b8d3fd594",
+  "prompts": {},
+  "sessions": {
+    "s_fa997fbd4b149e": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "be536f39-95e0-4ae1-aabe-17ba84cb11b2",
+        "model": "gemini-3.5-flash"
+      },
+      "human_author": "daniospace <daniospace@users.noreply.github.com>"
+    }
+  }
+}

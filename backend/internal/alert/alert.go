@@ -36,13 +36,13 @@ func SendBudgetAlert(ctx context.Context, c cache.Cache, teamID string, teamName
 		defer cancel()
 
 		payload := map[string]interface{}{
-			"text": fmt.Sprintf("🚨 Bifrost FinOps Alert: Team *%s* has consumed *%d%%* of their budget! Used: $%.2f / Limit: $%.2f", teamName, thresholdPercent, used, limit),
+			"text": fmt.Sprintf("🚨 AuraLLM FinOps Alert: Team *%s* has consumed *%d%%* of their budget! Used: $%.2f / Limit: $%.2f", teamName, thresholdPercent, used, limit),
 			"blocks": []interface{}{
 				map[string]interface{}{
 					"type": "header",
 					"text": map[string]interface{}{
 						"type": "plain_text",
-						"text": "🚨 Bifrost FinOps Alert",
+						"text": "🚨 AuraLLM FinOps Alert",
 					},
 				},
 				map[string]interface{}{

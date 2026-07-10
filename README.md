@@ -106,7 +106,7 @@ go build -o gateway main.go
 Developers access multi-provider models through AuraLLM by changing their client headers to point to the gateway:
 
 ### Endpoint: `POST /v1/chat/completions`
-*   **Auth Header:** `Authorization: Bearer <your_bifrost_team_key>`
+*   **Auth Header:** `Authorization: Bearer <your_aurallm_team_key>`
 *   **Optional Shadow Routing:** `X-Shadow-Model: claude-3-5-sonnet`
 *   **Payload (Standard OpenAI):**
     ```json

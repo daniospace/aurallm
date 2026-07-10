@@ -17,7 +17,7 @@ func TestScrubText(t *testing.T) {
 		},
 		{
 			name:          "Scrub Email",
-			input:         "Contact support@bifrost.ai for help.",
+			input:         "Contact support@aurallm.ai for help.",
 			expectedScrub: "Contact [REDACTED_EMAIL_1] for help.",
 			expectedCount: 1,
 		},

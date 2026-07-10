@@ -5,5 +5,14 @@
 backend/gateway
 gateway
 
+# Frontend build outputs
+frontend/out/
+frontend/.next/
+frontend/node_modules/
+
+# Backend static outputs
+backend/out/
+
 # Operating system files
 .DS_Store
+charts/aurallm/Chart.lock
